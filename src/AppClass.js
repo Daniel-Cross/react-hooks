@@ -4,15 +4,29 @@ class App extends Component {
 	state = {
 		count: 0,
 		isOn: false,
+		x: null,
+		y: null,
 	};
 
 	componentDidMount() {
 		document.title = `You have clicked ${this.state.count} times`;
+		window.addEventListener('mousemove', this.handleMouseMove);
 	}
 
 	componentDidUpdate() {
 		document.title = `You have clicked ${this.state.count} times`;
 	}
+
+	componentWillUnmount() {
+		window.removeEventListener('mousemove', this.handleMouseMove);
+	}
+
+	handleMouseMove = (e) => {
+		this.setState({
+			x: e.pageX,
+			y: e.pageY,
+		});
+	};
 
 	handleCount = () => {
 		this.setState((prevState) => ({
@@ -43,6 +57,9 @@ class App extends Component {
 						background: this.state.isOn ? 'yellow' : 'grey',
 					}}
 				/>
+				<h2>Mouse Position</h2>
+				<p>X Mouse position: {this.state.x}</p>
+				<p>Y Mouse position: {this.state.y}</p>
 			</div>
 		);
 	}
