@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Input from './Input';
 
 class App extends Component {
 	state = {
@@ -60,6 +61,8 @@ class App extends Component {
 				<h2>Mouse Position</h2>
 				<p>X Mouse position: {this.state.x}</p>
 				<p>Y Mouse position: {this.state.y}</p>
+
+				<Input />
 			</div>
 		);
 	}
