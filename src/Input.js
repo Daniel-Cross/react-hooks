@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTitleInput } from './Hooks/useTitleInput';
 
 const Input = () => {
 	const [ name, setName ] = useTitleInput('');
-
+	const ref = useRef();
 	return (
-		<div>
-			<h1>HOOK INPUT</h1>
+		<div className="wrapper" ref={ref}>
+			<h1 onClick={() => ref.current.classList.add('new-class-name')}>HOOK INPUT</h1>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
