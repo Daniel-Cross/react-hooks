@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useTitleInput } from './Hooks/useTitleInput';
 
 const Input = () => {
-	const [ name, setName ] = useState('');
+	const [ name, setName ] = useTitleInput('');
 
-	const formSubmit = (value, setValue) => {
-		console.log('form submitted! ' + value);
-		setValue('');
-	};
 	return (
 		<div>
 			<h1>HOOK INPUT</h1>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
-					formSubmit(name, setName);
 				}}>
 				<input type="text" onChange={(e) => setName(e.target.value)} value={name} />
 				<button>Submit</button>
