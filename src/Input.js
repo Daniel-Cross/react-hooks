@@ -1,6 +1,7 @@
 import React, { useRef, createContext } from 'react';
 import { useTitleInput } from './Hooks/useTitleInput';
 import Toggle from './Toggle';
+import Counter from './Counter';
 
 export const UserContext = createContext();
 
@@ -19,6 +20,7 @@ const Input = () => {
 					<button>Submit</button>
 				</form>
 				<Toggle />
+				<Counter />
 			</div>
 		</UserContext.Provider>
 	);
