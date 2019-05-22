@@ -5,21 +5,21 @@ const App = () => {
 	const [ isOn, setIsOn ] = useState(false);
 	const [ mousePosition, setMousePosition ] = useState({ x: null, y: null });
 
-	useEffect(() => {
-		document.title = `You have click ${count} times`;
-		window.addEventListener('mousemove', handleMouseMove);
+	// useEffect(() => {
+	// 	document.title = `You have click ${count} times`;
+	// 	window.addEventListener('mousemove', handleMouseMove);
 
-		return () => {
-			window.removeEventListener('mousemove', handleMouseMove);
-		};
-	}, []);
+	// 	return () => {
+	// 		window.removeEventListener('mousemove', handleMouseMove);
+	// 	};
+	// }, []);
 
-	const handleMouseMove = (e) => {
-		setMousePosition({
-			x: e.pageX,
-			y: e.pageY,
-		});
-	};
+	// const handleMouseMove = (e) => {
+	// 	setMousePosition({
+	// 		x: e.pageX,
+	// 		y: e.pageY,
+	// 	});
+	// };
 
 	const handleCount = () => {
 		setCount((prevCount) => prevCount + 1);

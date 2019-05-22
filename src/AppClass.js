@@ -9,25 +9,25 @@ class App extends Component {
 		y: null,
 	};
 
-	componentDidMount() {
-		document.title = `You have clicked ${this.state.count} times`;
-		window.addEventListener('mousemove', this.handleMouseMove);
-	}
+	// componentDidMount() {
+	// 	document.title = `You have clicked ${this.state.count} times`;
+	// 	window.addEventListener('mousemove', this.handleMouseMove);
+	// }
 
-	componentDidUpdate() {
-		document.title = `You have clicked ${this.state.count} times`;
-	}
+	// componentDidUpdate() {
+	// 	document.title = `You have clicked ${this.state.count} times`;
+	// }
 
-	componentWillUnmount() {
-		window.removeEventListener('mousemove', this.handleMouseMove);
-	}
+	// componentWillUnmount() {
+	// 	window.removeEventListener('mousemove', this.handleMouseMove);
+	// }
 
-	handleMouseMove = (e) => {
-		this.setState({
-			x: e.pageX,
-			y: e.pageY,
-		});
-	};
+	// handleMouseMove = (e) => {
+	// 	this.setState({
+	// 		x: e.pageX,
+	// 		y: e.pageY,
+	// 	});
+	// };
 
 	handleCount = () => {
 		this.setState((prevState) => ({
