@@ -11,6 +11,7 @@ const Input = () => {
 	const [ dishes, setDishes ] = useState([]);
 
 	const fetchDishes = async () => {
+		console.log('ran');
 		const res = await fetch('https://my-json-server.typicode.com/leveluptuts/fakeapi/dishes');
 		const data = await res.json();
 		setDishes(data);
